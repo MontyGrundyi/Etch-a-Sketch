@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#squaresbtn {
+  margin: 30px auto;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+  width: 750px;
+  height: 750px; /* Set height to 100% of viewport height */
+  overflow: hidden; /* Hide any content that overflows the container */
+}
+
+.etch {
+  border: 1px solid black;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.etch:hover {
+  /* background-color: aqua; */
+  animation: trailAnimation 1s infinite;
+}
+
+@keyframes trailAnimation {
+  0% {
+    box-shadow: 0 0 5px 5px blue;
+  }
+  100% {
+    box-shadow: 0 0 30px 30px rgba(0, 0, 255, 0);
+  }
+}
