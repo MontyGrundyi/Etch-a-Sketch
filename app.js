@@ -11,10 +11,14 @@ function createSquares(numSquares) {
     square.style.width = squareSize + "px";
     square.style.height = squareSize + "px";
     container.appendChild(square);
+
+    let interactions = 0;
     square.addEventListener("mouseover", () => {
       const randomColor = getRandomColor();
       square.style.backgroundColor = randomColor;
     });
+    interactions++;
+    darkenSquare(square, interactions);
     square.addEventListener("mouseout", () => {
       square.style.backgroundColor = "";
     });
@@ -45,4 +49,10 @@ squaresBtn.addEventListener("click", () => {
   }
 });
 
+function darkenSquare(square, interactions) {
+  const opacity = 1 - interactions * 0.1;
+  square.style.opacity = opacity;
+}
+
+//I
 createSquares(16);
